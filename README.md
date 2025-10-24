@@ -1,40 +1,77 @@
-# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
+# BiBilet 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
 
 
 
-Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
+Modern otobüs bileti rezervasyon platformu.
 
 
 
-## 📋 GereksinimlerDocker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
+## 🚀 KurulumDocker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
 
 
 
-- Docker
-
-- Docker Compose
-
-## 📋 Gereksinimler## 📋 Gereksinimler
-
-## 🚀 Hızlı Başlangıç
-
-
-
-### 1. Projeyi İndir
-
-```bash- Docker- Docker
+```bash
 
 git clone https://github.com/ucarabdullah/bilet-satin-alma.git
 
-cd bilet-satin-alma- Docker Compose- Docker Compose
+cd bilet-satin-alma## 📋 GereksinimlerDocker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
+
+docker-compose up -d
 
 ```
 
 
 
-### 2. Docker Çalıştır
+Tarayıcıda aç: **http://localhost:8080**- Docker
 
-```bash## 🚀 Hızlı Başlangıç## 🚀 Hızlı Başlangıç
+
+
+## 🔑 Giriş Bilgileri- Docker Compose
+
+
+
+Tüm şifreler: **password123**## 📋 Gereksinimler## 📋 Gereksinimler
+
+
+
+### Admin Paneli## 🚀 Hızlı Başlangıç
+
+👉 http://localhost:8080/admin/login
+
+- admin@bibilet.com
+
+
+
+### Firma Paneli### 1. Projeyi İndir
+
+👉 http://localhost:8080/company/login
+
+- metro@bibilet.com (Metro Turizm)```bash- Docker- Docker
+
+- pamukkale@bibilet.com (Pamukkale)
+
+- ulusoy@bibilet.com (Ulusoy)git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+
+
+
+## 📦 Teknolojilercd bilet-satin-alma- Docker Compose- Docker Compose
+
+
+
+- PHP 8.2 + SQLite```
+
+- Docker + Apache
+
+- Bootstrap 5
+
+
+
+## 📄 Lisans### 2. Docker Çalıştır
+
+
+
+MIT © [@ucarabdullah](https://github.com/ucarabdullah)```bash## 🚀 Hızlı Başlangıç## 🚀 Hızlı Başlangıç
+
 
 docker-compose up -d
 
