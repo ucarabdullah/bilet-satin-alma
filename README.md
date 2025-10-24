@@ -1,8 +1,24 @@
 # BiBilet 🚌
 
-Online otobüs bileti satın alma platformu.
+Online otobüs bileti satın alma platformu. Kullanıcıların otobüs bileti satın alabileceği, firmaların seferlerini yönetebildiği modern bir web uygulaması.
 
-## Kurulum
+## 🛠️ Teknolojiler
+
+- Backend: PHP 8.2 (MVC)
+- Database: SQLite
+- Frontend: Bootstrap 5
+- Container: Docker + Apache
+
+## ✨ Özellikler
+
+- Online bilet satın alma ve rezervasyon
+- Koltuk seçimi ve bilet iptali
+- Firma ve sefer yönetimi
+- Çoklu firma desteği
+- İndirim kuponu sistemi
+- PDF bilet çıktısı
+
+## 🚀 Docker Kurulum
 
 1. Projeyi klonlayın:
 ```bash
@@ -10,14 +26,14 @@ git clone https://github.com/ucarabdullah/bilet-satin-alma.git
 cd bilet-satin-alma
 ```
 
-2. Docker ile çalıştırın:
+2. Docker container'ı başlatın:
 ```bash
 docker-compose up -d
 ```
 
 Uygulama http://localhost:8080 adresinde çalışacaktır.
 
-## Giriş Bilgileri
+## 🔑 Giriş Bilgileri
 
 Tüm hesapların şifresi: `password123`
 
@@ -27,12 +43,12 @@ Tüm hesapların şifresi: `password123`
 
 ### Firma Paneli
 - URL: http://localhost:8080/company
-- Email:
+- Hesaplar:
   - metro@bibilet.com (Metro Turizm)
   - pamukkale@bibilet.com (Pamukkale)
   - ulusoy@bibilet.com (Ulusoy)
 
-## İletişim
+## 📧 İletişim
 
 [@ucarabdullah](https://github.com/ucarabdullah)
 
