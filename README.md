@@ -36,7 +36,7 @@ http://localhost:8080
 | **Şifre** | password123 |
 
 ## 🚌 Firma Giriş Bilgileri
-| **URL** | http://localhost:8080/admin/login |
+| **URL** | http://localhost:8080/copmany/login |
 | Firma | Email | Şifre |
 |-------|-------|-------|
 | Metro Turizm | metro@bibilet.com | password123 |
