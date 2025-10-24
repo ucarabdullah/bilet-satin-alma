@@ -44,7 +44,37 @@ Modern, güvenli ve kullanıcı dostu otobüs bileti rezervasyon sistemi. PHP 8.
 - Apache (mod_rewrite etkin) veya PHP dahili sunucu
 - Docker (opsiyonel)
 
-## 🐳 Docker ile Kurulum (Önerilen)
+## � Hızlı Başlangıç (Önerilen)
+
+### PHP Dahili Sunucu ile (En Kolay)
+
+1. **Projeyi klonlayın:**
+```bash
+git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+cd bilet-satin-alma
+```
+
+2. **Sunucuyu başlatın:**
+```bash
+php -S localhost:8000 -t public public/router.php
+```
+
+3. **Tarayıcıda açın:**
+   - Ana Sayfa: `http://localhost:8000`
+   - Admin Paneli: `http://localhost:8000/admin/login`
+   - Firma Paneli: `http://localhost:8000/company/login`
+
+4. **Test hesapları:**
+   - `TEST_ACCOUNTS.md` dosyasına bakın
+   - Tüm şifreler: `password123`
+
+> **Not:** Veritabanı (`database.sqlite`) projeye dahildir ve test verileri yüklenmiş haldedir.
+
+---
+
+##  Docker ile Kurulum (Alternatif)
+
+> **Uyarı:** Docker kurulumu şu anda `.htaccess` routing sorunu yaşamaktadır. PHP dahili sunucu kullanmanız önerilir.
 
 1. **Projeyi klonlayın:**
 ```bash
@@ -80,9 +110,11 @@ docker-compose down -v
 rm database.sqlite
 ```
 
-## 💻 Manuel Kurulum
+## 💻 Manuel Kurulum (Apache)
 
-### 1. Projeyi İndirin
+### Apache Web Sunucu ile
+
+> **Not:** Veritabanı zaten proje ile birlikte gelir. Yeniden oluşturmanıza gerek yok.
 ```bash
 git clone https://github.com/ucarabdullah/bilet-satin-alma.git
 cd bilet-satin-alma

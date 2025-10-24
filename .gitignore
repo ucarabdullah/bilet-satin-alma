@@ -1,6 +1,6 @@
-# Database (sadece development database'i ignore edilir)
-# Production database Docker volume olarak manage edilecek
-database.sqlite
+# Database - Production için farklı database kullanılacak
+# Development database GitHub'a dahil edildi
+# database.sqlite
 
 # IDE
 .vscode/
