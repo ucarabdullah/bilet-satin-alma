@@ -1,0 +1,51 @@
+# Database (sadece development database'i ignore edilir)
+# Production database Docker volume olarak manage edilecek
+database.sqlite
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.bak
+*_backup.*
+*_old.*
+
+# Uploads
+public/assets/uploads/*
+!public/assets/uploads/.gitkeep
+
+# Environment files
+.env
+.env.local
+.env.production
+
+# Dependencies
+vendor/
+node_modules/
+
+# Tests
+tests/
+phpunit.xml
+
+# Docker
+docker-compose.override.yml
+
+# Development files
+*.pdf
+PROJECT_TRACKING.md

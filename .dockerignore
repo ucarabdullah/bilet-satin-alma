@@ -1,0 +1,53 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Database (production'da farklı database kullanılacak)
+database.sqlite
+*.db
+
+# Backup files
+*.bak
+*_backup.*
+*_old.*
+
+# Documentation (production'da gereksiz)
+*.md
+!README.md
+*.pdf
+
+# Test dosyaları
+tests/
+phpunit.xml
+
+# Dependencies
+vendor/
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# Docker compose override
+docker-compose.override.yml

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: bibilet-app
+    ports:
+      - "8080:80"
+    volumes:
+      - ./database:/var/www/html/database
+      - ./logs:/var/www/html/logs
+      - ./public/assets/uploads:/var/www/html/public/assets/uploads
+    environment:
+      - APACHE_DOCUMENT_ROOT=/var/www/html/public
+    restart: unless-stopped
+    networks:
+      - bibilet-network
+
+networks:
+  bibilet-network:
+    driver: bridge

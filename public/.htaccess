@@ -1,0 +1,25 @@
+# Güvenlik ve Routing
+RewriteEngine On
+RewriteBase /BiBilet/public/
+
+# Hassas dosyalara erişimi engelle
+<FilesMatch "\.(env|log|sql|sqlite|sqllite)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Directory listing'i kapat
+Options -Indexes
+
+# Public dışındaki dosyalara direkt erişimi engelle
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Security Headers
+<IfModule mod_headers.c>
+    Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "no-referrer"
+</IfModule>
