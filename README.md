@@ -1,132 +1,261 @@
-# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
+# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
 
 
 
-Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
+Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
 
 
+
+## 📋 GereksinimlerDocker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
+
+
+
+- Docker
+
+- Docker Compose
 
 ## 📋 Gereksinimler## 📋 Gereksinimler
 
-
-
-- Docker- Docker
-
-- Docker Compose- Docker Compose
+## 🚀 Hızlı Başlangıç
 
 
 
-## 🚀 Hızlı Başlangıç## 🚀 Hızlı Başlangıç
+### 1. Projeyi İndir
+
+```bash- Docker- Docker
+
+git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+
+cd bilet-satin-alma- Docker Compose- Docker Compose
+
+```
 
 
 
-### 1. Projeyi İndir### 1. Projeyi İndir
+### 2. Docker Çalıştır
 
-```bash```bash
+```bash## 🚀 Hızlı Başlangıç## 🚀 Hızlı Başlangıç
+
+docker-compose up -d
+
+```
+
+
+
+### 3. Tarayıcıda Aç### 1. Projeyi İndir### 1. Projeyi İndir
+
+```
+
+http://localhost:8080```bash```bash
+
+```
 
 git clone https://github.com/ucarabdullah/bilet-satin-alma.gitgit clone https://github.com/ucarabdullah/bilet-satin-alma.git
 
+## 🔑 Yönetici Girişleri
+
 cd bilet-satin-almacd bilet-satin-alma
 
-``````
-
-
-
-### 2. Docker Çalıştır### 2. Docker Çalıştır
-
-```bash```bash
-
-docker-compose up -ddocker-compose up -d
+Tüm hesapların şifresi: **password123**
 
 ``````
 
+### Admin Paneli
+
+**URL:** http://localhost:8080/admin/login
 
 
-### 3. Tarayıcıda Aç### 3. Tarayıcıda Aç
+
+| Email | Şifre | Açıklama |### 2. Docker Çalıştır### 2. Docker Çalıştır
+
+|-------|-------|----------|
+
+| admin@bibilet.com | password123 | Sistem yöneticisi |```bash```bash
+
+
+
+### Firma Paneli  docker-compose up -ddocker-compose up -d
+
+**URL:** http://localhost:8080/company/login
 
 ``````
+
+| Firma | Email | Şifre |
+
+|-------|-------|-------|
+
+| Metro Turizm | metro@bibilet.com | password123 |
+
+| Pamukkale Turizm | pamukkale@bibilet.com | password123 |### 3. Tarayıcıda Aç### 3. Tarayıcıda Aç
+
+| Ulusoy Seyahat | ulusoy@bibilet.com | password123 |
+
+``````
+
+## ✨ Özellikler
 
 http://localhost:8080http://localhost:8080
 
-``````
+### Kullanıcı (Yolcu) Özellikleri
+
+- ✅ Kullanıcı kayıt ve giriş sistemi``````
+
+- ✅ Sefer arama ve filtreleme
+
+- ✅ Koltuk seçimi ve rezervasyon
+
+- ✅ Kupon kodu ile indirim uygulama
+
+- ✅ Sanal bakiye ile bilet satın alma## 🔑 Yönetici Girişleri## 🔑 Yönetici Girişleri
+
+- ✅ Bilet iptal ve otomatik para iadesi
+
+- ✅ PDF bilet indirme
 
 
 
-## 🔑 Yönetici Girişleri## 🔑 Yönetici Girişleri
+### Firma Admin ÖzellikleriTüm hesapların şifresi: **password123**Tüm hesapların şifresi: **password123**
+
+- ✅ Sefer yönetimi (CRUD)
+
+- ✅ Satılan biletleri görüntüleme
+
+- ✅ Firmaya özel kupon oluşturma
+
+- ✅ Dashboard ve istatistikler### Admin Paneli### Admin Paneli
 
 
 
-Tüm hesapların şifresi: **password123**Tüm hesapların şifresi: **password123**
+### Sistem Admin Özellikleri**URL:** http://localhost:8080/admin/login**URL:** http://localhost:8080/admin/login
+
+- ✅ Otobüs firması yönetimi
+
+- ✅ Firma admin atama
+
+- ✅ Kupon yönetimi
+
+- ✅ Kullanıcı yönetimi| Email | Şifre | Açıklama || Email | Şifre | Açıklama |
 
 
 
-### Admin Paneli### Admin Paneli
-
-**URL:** http://localhost:8080/admin/login**URL:** http://localhost:8080/admin/login
+## 🔒 Güvenlik|-------|-------|----------||-------|-------|----------|
 
 
 
-| Email | Şifre | Açıklama || Email | Şifre | Açıklama |
+- ✅ CSRF Koruması| admin@bibilet.com | password123 | Sistem yöneticisi || admin@bibilet.com | password123 | Sistem yöneticisi |
 
-|-------|-------|----------||-------|-------|----------|
+- ✅ XSS Koruması 
 
-| admin@bibilet.com | password123 | Sistem yöneticisi || admin@bibilet.com | password123 | Sistem yöneticisi |
+- ✅ SQL Injection Koruması
 
+- ✅ Session Güvenliği
 
+- ✅ Brute Force Koruması### Firma Paneli  ### Firma Paneli  
 
-### Firma Paneli  ### Firma Paneli  
+- ✅ Password Hashing (Bcrypt)
 
 **URL:** http://localhost:8080/company/login**URL:** http://localhost:8080/company/login
 
+## 🐳 Docker Komutları
 
 
-| Firma | Email | Şifre || Firma | Email | Şifre |
+
+```bash
+
+# Container'ı başlat| Firma | Email | Şifre || Firma | Email | Şifre |
+
+docker-compose up -d
 
 |-------|-------|-------||-------|-------|-------|
 
-| Metro Turizm | metro@bibilet.com | password123 || Metro Turizm | metro@bibilet.com | password123 |
+# Container'ı durdur
 
-| Pamukkale Turizm | pamukkale@bibilet.com | password123 || Pamukkale Turizm | pamukkale@bibilet.com | password123 |
+docker-compose down| Metro Turizm | metro@bibilet.com | password123 || Metro Turizm | metro@bibilet.com | password123 |
+
+
+
+# Log'ları görüntüle| Pamukkale Turizm | pamukkale@bibilet.com | password123 || Pamukkale Turizm | pamukkale@bibilet.com | password123 |
+
+docker-compose logs -f
 
 | Ulusoy Seyahat | ulusoy@bibilet.com | password123 || Ulusoy Seyahat | ulusoy@bibilet.com | password123 |
 
+# Yeniden build et
 
+docker-compose build --no-cache
+
+```
 
 ## ✨ Özellikler## ✨ Özellikler
 
+## 📁 Proje Yapısı
 
 
-### Kullanıcı (Yolcu) Özellikleri### Kullanıcı (Yolcu) Özellikleri
 
-- ✅ Kullanıcı kayıt ve giriş sistemi- ✅ Kullanıcı kayıt ve giriş sistemi
+```
 
-- ✅ Sefer arama ve filtreleme- ✅ Sefer arama ve filtreleme
+BiBİlet/### Kullanıcı (Yolcu) Özellikleri### Kullanıcı (Yolcu) Özellikleri
 
-- ✅ Koltuk seçimi ve rezervasyon- ✅ Koltuk seçimi ve rezervasyon
+├── config/              # Yapılandırma
 
-- ✅ Kupon kodu ile indirim uygulama- ✅ Kupon kodu ile indirim uygulama
+├── database/           - ✅ Kullanıcı kayıt ve giriş sistemi- ✅ Kullanıcı kayıt ve giriş sistemi
 
-- ✅ Sanal bakiye ile bilet satın alma- ✅ Sanal bakiye ile bilet satın alma
+│   ├── schema.sql      # DB şeması
 
-- ✅ Bilet iptal ve otomatik para iadesi- ✅ Bilet iptal ve otomatik para iadesi
+│   └── seed.sql        # Test verileri- ✅ Sefer arama ve filtreleme- ✅ Sefer arama ve filtreleme
 
-- ✅ PDF bilet indirme- ✅ PDF bilet indirme
+├── public/             
+
+│   ├── .htaccess      - ✅ Koltuk seçimi ve rezervasyon- ✅ Koltuk seçimi ve rezervasyon
+
+│   └── assets/         # CSS, JS, uploads
+
+├── src/- ✅ Kupon kodu ile indirim uygulama- ✅ Kupon kodu ile indirim uygulama
+
+│   ├── controllers/   
+
+│   ├── models/        - ✅ Sanal bakiye ile bilet satın alma- ✅ Sanal bakiye ile bilet satın alma
+
+│   ├── views/         
+
+│   └── helpers/        - ✅ Bilet iptal ve otomatik para iadesi- ✅ Bilet iptal ve otomatik para iadesi
+
+├── Dockerfile          
+
+└── docker-compose.yml  - ✅ PDF bilet indirme- ✅ PDF bilet indirme
+
+```
 
 
+
+## 🛠️ Teknolojiler
 
 ### Firma Admin Özellikleri### Firma Admin Özellikleri
 
-- ✅ Sefer yönetimi (CRUD)- ✅ Sefer yönetimi (CRUD)
+- **Backend**: PHP 8.2 (MVC)
 
-- ✅ Satılan biletleri görüntüleme- ✅ Satılan biletleri görüntüleme
+- **Database**: SQLite 3- ✅ Sefer yönetimi (CRUD)- ✅ Sefer yönetimi (CRUD)
 
-- ✅ Firmaya özel kupon oluşturma- ✅ Firmaya özel kupon oluşturma
+- **Frontend**: Bootstrap 5
 
-- ✅ Dashboard ve istatistikler- ✅ Dashboard ve istatistikler
+- **Container**: Docker + Apache- ✅ Satılan biletleri görüntüleme- ✅ Satılan biletleri görüntüleme
 
 
 
-### Sistem Admin Özellikleri### Sistem Admin Özellikleri
+## 📄 Lisans- ✅ Firmaya özel kupon oluşturma- ✅ Firmaya özel kupon oluşturma
+
+
+
+MIT lisansı altında lisanslanmıştır.- ✅ Dashboard ve istatistikler- ✅ Dashboard ve istatistikler
+
+
+
+## 📧 İletişim
+
+
+
+[@ucarabdullah](https://github.com/ucarabdullah)### Sistem Admin Özellikleri### Sistem Admin Özellikleri
+
 
 - ✅ Otobüs firması yönetimi- ✅ Otobüs firması yönetimi
 
