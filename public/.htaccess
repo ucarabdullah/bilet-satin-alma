@@ -1,6 +1,6 @@
 # Güvenlik ve Routing
 RewriteEngine On
-RewriteBase /BiBilet/public/
+RewriteBase /
 
 # Hassas dosyalara erişimi engelle
 <FilesMatch "\.(env|log|sql|sqlite|sqllite)$">

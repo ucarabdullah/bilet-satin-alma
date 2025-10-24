@@ -1,55 +1,26 @@
 FROM php:8.2-apache
 
-# SQLite ve gerekli PHP eklentilerini yükle
-RUN apt-get update && apt-get install -y \
-    sqlite3 \
-    libsqlite3-dev \
-    && docker-php-ext-install pdo pdo_sqlite \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# SQLite yükle
+RUN apt-get update && \
+    apt-get install -y sqlite3 libsqlite3-dev && \
+    docker-php-ext-install pdo pdo_sqlite && \
+    a2enmod rewrite && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
-# Apache mod_rewrite'ı etkinleştir
-RUN a2enmod rewrite
-
-# Çalışma dizinini ayarla
+# Çalışma dizini
 WORKDIR /var/www/html
 
-# Proje dosyalarını kopyala
-COPY . /var/www/html/
+# Proje dosyaları
+COPY . .
 
-# Veritabanını oluştur
-RUN if [ -f database/schema.sql ]; then \
-        sqlite3 /var/www/html/database.sqlite < database/schema.sql && \
-        echo "Schema created"; \
-    fi && \
-    if [ -f database/seed.sql ]; then \
-        sqlite3 /var/www/html/database.sqlite < database/seed.sql && \
-        echo "Seed data loaded"; \
-    fi && \
-    chown www-data:www-data /var/www/html/database.sqlite && \
-    chmod 664 /var/www/html/database.sqlite
-
-# Public klasörünü DocumentRoot olarak ayarla ve .htaccess'i etkinleştir
+# Apache DocumentRoot ve .htaccess ayarı
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf && \
     sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
-# Database klasörü için yazma izinleri
-RUN mkdir -p /var/www/html/database && \
-    chown -R www-data:www-data /var/www/html/database && \
-    chmod -R 775 /var/www/html/database
+# Yazma izinleri
+RUN chown -R www-data:www-data /var/www/html/database /var/www/html/logs /var/www/html/public/assets/uploads && \
+    chmod -R 775 /var/www/html/database /var/www/html/logs /var/www/html/public/assets/uploads
 
-# Log klasörü için yazma izinleri
-RUN mkdir -p /var/www/html/logs && \
-    chown -R www-data:www-data /var/www/html/logs && \
-    chmod -R 775 /var/www/html/logs
-
-# Upload klasörü için yazma izinleri
-RUN mkdir -p /var/www/html/public/assets/uploads && \
-    chown -R www-data:www-data /var/www/html/public/assets/uploads && \
-    chmod -R 775 /var/www/html/public/assets/uploads
-
-# Port 80'i aç
 EXPOSE 80
-
-# Apache'yi başlat
 CMD ["apache2-foreground"]

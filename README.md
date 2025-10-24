@@ -1,8 +1,35 @@
-# BiBilet - Otobüs Bileti Satın Alma Platformu
+# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
 
-Modern, güvenli ve kullanıcı dostu otobüs bileti rezervasyon sistemi. PHP 8.2, SQLite ve Bootstrap 5 ile geliştirilmiştir.
+Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
 
-## 🚀 Özellikler
+## 📋 Gereksinimler
+
+- Docker
+- Docker Compose
+
+## 🚀 Hızlı Başlangıç
+
+### 1. Projeyi İndir
+```bash
+git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+cd bilet-satin-alma
+```
+
+### 2. Docker Çalıştır
+```bash
+docker-compose up -d
+```
+
+### 3. Tarayıcıda Aç
+```
+http://localhost:8080
+```
+
+### 4. Giriş Yap
+- **Admin**: admin@bibilet.com / password123
+- Diğer hesaplar: `TEST_ACCOUNTS.md`
+
+## ✨ Özellikler
 
 ### Kullanıcı (Yolcu) Özellikleri
 - ✅ Kullanıcı kayıt ve giriş sistemi
@@ -10,39 +37,29 @@ Modern, güvenli ve kullanıcı dostu otobüs bileti rezervasyon sistemi. PHP 8.
 - ✅ Koltuk seçimi ve rezervasyon
 - ✅ Kupon kodu ile indirim uygulama
 - ✅ Sanal bakiye ile bilet satın alma
-- ✅ Bilet iptal ve otomatik para iadesi (seferden 1 saat öncesine kadar)
+- ✅ Bilet iptal ve otomatik para iadesi
 - ✅ PDF bilet indirme
-- ✅ Bilet geçmişi görüntüleme
 
 ### Firma Admin Özellikleri
 - ✅ Sefer yönetimi (CRUD)
-- ✅ Satılan biletleri görüntüleme ve iptal etme
-- ✅ Firmaya özel kupon oluşturma ve yönetme
+- ✅ Satılan biletleri görüntüleme
+- ✅ Firmaya özel kupon oluşturma
 - ✅ Dashboard ve istatistikler
 
 ### Sistem Admin Özellikleri
-- ✅ Otobüs firması yönetimi (CRUD)
-- ✅ Firma admin kullanıcıları oluşturma ve firmaya atama
-- ✅ Genel indirim kuponları yönetimi
-- ✅ Tüm kullanıcıları görüntüleme ve yönetme
+- ✅ Otobüs firması yönetimi
+- ✅ Firma admin atama
+- ✅ Kupon yönetimi
+- ✅ Kullanıcı yönetimi
 
-## 🔒 Güvenlik Özellikleri
+## 🔒 Güvenlik
 
-- ✅ **CSRF Koruması**: Tüm formlarda token doğrulama
-- ✅ **XSS Koruması**: Kullanıcı girdilerinin temizlenmesi (htmlspecialchars)
-- ✅ **SQL Injection Koruması**: Prepared statements kullanımı
-- ✅ **Session Güvenliği**: Session hijacking koruması, timeout kontrolü
-- ✅ **Brute Force Koruması**: Başarısız giriş denemesi limiti (5 deneme, 15 dakika bekleme)
-- ✅ **Password Hashing**: Bcrypt ile güvenli şifre saklama (cost=12)
-- ✅ **Role-Based Access Control (RBAC)**: Rol bazlı yetkilendirme sistemi
-- ✅ **Session Fixation Koruması**: Her başarılı girişte session regeneration
-
-## 📋 Gereksinimler
-
-- PHP 8.2 veya üzeri
-- SQLite 3
-- Apache (mod_rewrite etkin) veya PHP dahili sunucu
-- Docker (opsiyonel)
+- ✅ CSRF Koruması
+- ✅ XSS Koruması 
+- ✅ SQL Injection Koruması
+- ✅ Session Güvenliği
+- ✅ Brute Force Koruması
+- ✅ Password Hashing (Bcrypt)
 
 ## � Hızlı Başlangıç (Önerilen)
 
@@ -152,92 +169,71 @@ Test hesapları ve şifreleri için `TEST_ACCOUNTS.md` dosyasına bakın.
 - **Firma Paneli**: `http://localhost:8000/company/login`
 - **Kullanıcı Girişi**: `http://localhost:8000/login`
 
-## 📁 Proje Yapısı
+## � Test Hesapları
+
+Tüm hesapların şifresi: `password123`
+
+### Admin
+- 👨‍💼 admin@bibilet.com
+
+### Firma Adminleri
+- 🚌 Metro: metro@bibilet.com
+- 🚌 Pamukkale: pamukkale@bibilet.com
+- 🚌 Ulusoy: ulusoy@bibilet.com
+
+### Test Kullanıcıları
+- 👤 ahmet@example.com (1000 TL bakiye)
+- 👤 ayse@example.com (1500 TL bakiye)
+- 👤 mehmet@example.com (2000 TL bakiye)
+
+### Test Kuponları
+- 🎫 SUMMER2024: %20 indirim
+- 🎫 WELCOME50: %50 indirim
+- 🎫 METRO30: %30 Metro indirimi
+- 🎫 PAMUKKALE25: %25 Pamukkale indirimi
+- 🎫 ULUSOY15: %15 Ulusoy indirimi
+
+## � Docker Komutları
+
+```bash
+# Container'ı başlat
+docker-compose up -d
+
+# Container'ı durdur
+docker-compose down
+
+# Log'ları görüntüle
+docker-compose logs -f
+
+# Yeniden build et
+docker-compose build --no-cache
+```
+
+## � Proje Yapısı
 
 ```
 BiBİlet/
-├── config/              # Yapılandırma dosyaları
-│   ├── config.php       # Genel yapılandırma
-│   └── database.php     # Database sınıfı
-├── database/            # Veritabanı şemaları ve seed dosyaları
-│   ├── schema.sql       # Tablo yapısı
-│   └── seed.sql         # Test verileri
-├── public/              # Web root dizini
-│   ├── .htaccess        # Apache routing kuralları
-│   ├── index.php        # Ana giriş noktası
-│   └── assets/          # CSS, JS, resim dosyaları
+├── config/              # Yapılandırma
+├── database/           
+│   ├── schema.sql      # DB şeması
+│   └── seed.sql        # Test verileri
+├── public/             
+│   ├── .htaccess      
+│   └── assets/         # CSS, JS, uploads
 ├── src/
-│   ├── controllers/     # Controller sınıfları
-│   ├── models/          # Model sınıfları
-│   ├── views/           # View dosyaları
-│   └── helpers/         # Yardımcı sınıflar (Security, Auth, Router, UUID)
-├── Dockerfile           # Docker image yapılandırması
-├── docker-compose.yml   # Docker Compose yapılandırması
-└── README.md           # Bu dosya
+│   ├── controllers/   
+│   ├── models/        
+│   ├── views/         
+│   └── helpers/        
+├── Dockerfile          
+└── docker-compose.yml  
 ```
-
-## 🛠️ Teknolojiler
-
-- **Backend**: PHP 8.2 (MVC Mimarisi)
-- **Veritabanı**: SQLite 3
-- **Frontend**: HTML5, CSS3, Bootstrap 5
-- **Güvenlik**: CSRF Token, XSS Protection, Prepared Statements, Session Security
-- **Mimari**: MVC (Model-View-Controller)
-
-## 🔧 Önemli Notlar
-
-- **JavaScript Kullanımı**: Proje backend logic'i için sadece PHP kullanır. JavaScript sadece UI animasyonları için kullanılmıştır (date picker, hover efektleri vb.).
-- **No-JS Policy**: Koltuk seçimi, kupon kontrolü ve form validasyonları tamamen PHP ile sunucu tarafında yapılır.
-- **Database**: SQLite kullanılır. Production ortamında PostgreSQL veya MySQL'e geçiş yapılabilir.
-- **Transaction Safety**: Bilet iptal, sefer silme ve firma silme işlemleri transaction ile korunur.
-
-## 📝 API Endpoint'leri
-
-### Genel
-- `GET /` - Ana sayfa (sefer arama)
-- `GET /trips/search` - Sefer arama sonuçları
-- `GET /trips/details/:id` - Sefer detayları
-
-### Kullanıcı
-- `POST /auth/register` - Kayıt ol
-- `POST /auth/login` - Giriş yap
-- `GET /user/dashboard` - Kullanıcı paneli
-- `GET /user/tickets` - Biletlerim
-- `POST /user/load-balance` - Bakiye yükle
-- `POST /trips/book/:id` - Bilet satın al
-- `POST /tickets/cancel/:id` - Bilet iptal
-
-### Firma Admin
-- `GET /company/dashboard` - Firma paneli
-- `GET /company/trips` - Seferler
-- `POST /company/trips/create` - Sefer ekle
-- `POST /company/trips/edit/:id` - Sefer düzenle
-- `POST /company/trips/delete/:id` - Sefer sil
-- `GET /company/tickets` - Satılan biletler
-- `GET /company/coupons` - Kuponlar
-
-### Admin
-- `GET /admin/dashboard` - Admin paneli
-- `GET /admin/companies` - Firmalar
-- `POST /admin/companies/create` - Firma ekle
-- `GET /admin/users` - Kullanıcılar
-- `GET /admin/coupons` - Kuponlar
-
-## 🤝 Katkıda Bulunma
-
-1. Fork edin
-2. Feature branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'feat: Add amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request açın
 
 ## 📄 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır.
+MIT lisansı altında lisanslanmıştır.
 
 ## 📧 İletişim
 
-Proje Sahibi - [@ucarabdullah](https://github.com/ucarabdullah)
-
-Proje Linki: [https://github.com/ucarabdullah/bilet-satin-alma](https://github.com/ucarabdullah/bilet-satin-alma)
+[@ucarabdullah](https://github.com/ucarabdullah)
 
