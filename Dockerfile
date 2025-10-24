@@ -17,6 +17,18 @@ WORKDIR /var/www/html
 # Proje dosyalarını kopyala
 COPY . /var/www/html/
 
+# Veritabanını oluştur
+RUN if [ -f database/schema.sql ]; then \
+        sqlite3 /var/www/html/database.sqlite < database/schema.sql && \
+        echo "Schema created"; \
+    fi && \
+    if [ -f database/seed.sql ]; then \
+        sqlite3 /var/www/html/database.sqlite < database/seed.sql && \
+        echo "Seed data loaded"; \
+    fi && \
+    chown www-data:www-data /var/www/html/database.sqlite && \
+    chmod 664 /var/www/html/database.sqlite
+
 # Public klasörünü DocumentRoot olarak ayarla
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
@@ -35,12 +47,8 @@ RUN mkdir -p /var/www/html/public/assets/uploads && \
     chown -R www-data:www-data /var/www/html/public/assets/uploads && \
     chmod -R 775 /var/www/html/public/assets/uploads
 
-# Entrypoint script'ini kopyala
-COPY docker-entrypoint.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-
 # Port 80'i aç
 EXPOSE 80
 
-# Entrypoint ile başlat
-ENTRYPOINT ["docker-entrypoint.sh"]
+# Apache'yi başlat
+CMD ["apache2-foreground"]
