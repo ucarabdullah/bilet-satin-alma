@@ -31,12 +31,12 @@ http://localhost:8080
 
 | Bilgi | Değer |
 |-------|-------|
-| **URL** | http://localhost:8080/admin |
+| **URL** | http://localhost:8080/admin/login |
 | **Email** | admin@bibilet.com |
 | **Şifre** | password123 |
 
 ## 🚌 Firma Giriş Bilgileri
-
+| **URL** | http://localhost:8080/admin/login |
 | Firma | Email | Şifre |
 |-------|-------|-------|
 | Metro Turizm | metro@bibilet.com | password123 |
