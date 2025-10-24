@@ -48,8 +48,8 @@ Modern, güvenli ve kullanıcı dostu otobüs bileti rezervasyon sistemi. PHP 8.
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone https://github.com/kullaniciadi/bibilet.git
-cd bibilet
+git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+cd bilet-satin-alma
 ```
 
 2. **Docker container'ı başlatın:**
@@ -69,8 +69,8 @@ docker-compose down
 
 ### 1. Projeyi İndirin
 ```bash
-git clone https://github.com/kullaniciadi/bibilet.git
-cd bibilet
+git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+cd bilet-satin-alma
 ```
 
 ### 2. Veritabanını Oluşturun
@@ -190,7 +190,7 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 📧 İletişim
 
-Proje Sahibi - [@kullaniciadi](https://github.com/kullaniciadi)
+Proje Sahibi - [@ucarabdullah](https://github.com/ucarabdullah)
 
-Proje Linki: [https://github.com/kullaniciadi/bibilet](https://github.com/kullaniciadi/bibilet)
+Proje Linki: [https://github.com/ucarabdullah/bilet-satin-alma](https://github.com/ucarabdullah/bilet-satin-alma)
 

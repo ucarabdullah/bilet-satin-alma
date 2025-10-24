@@ -1,0 +1,3 @@
+# Bu dosya database klasörünün Git'te takip edilmesini sağlar
+# database.sqlite dosyası .gitignore ile ignore edilir
+# Kullanıcılar kendi veritabanlarını schema.sql ve seed.sql ile oluşturmalıdır
