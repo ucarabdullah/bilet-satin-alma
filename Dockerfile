@@ -11,6 +11,11 @@ RUN apt-get update && \
 # Çalışma dizini
 WORKDIR /var/www/html
 
+# Gerekli klasörleri oluştur
+RUN mkdir -p /var/www/html/database \
+    /var/www/html/logs \
+    /var/www/html/public/assets/uploads
+
 # Proje dosyaları
 COPY . .
 
@@ -19,8 +24,12 @@ RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available
     sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Yazma izinleri
-RUN chown -R www-data:www-data /var/www/html/database /var/www/html/logs /var/www/html/public/assets/uploads && \
-    chmod -R 775 /var/www/html/database /var/www/html/logs /var/www/html/public/assets/uploads
+RUN chown -R www-data:www-data /var/www/html/database \
+    /var/www/html/logs \
+    /var/www/html/public/assets/uploads && \
+    chmod -R 775 /var/www/html/database \
+    /var/www/html/logs \
+    /var/www/html/public/assets/uploads
 
 EXPOSE 80
 CMD ["apache2-foreground"]
