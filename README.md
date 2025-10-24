@@ -1,109 +1,247 @@
-# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
+# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌# BiBilet - Otobüs Bileti Satın Alma Platformu 🚌
 
-Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
 
-## 📋 Gereksinimler
 
-- Docker
-- Docker Compose
+Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.Docker üzerinde çalışan modern otobüs bileti rezervasyon sistemi.
 
-## 🚀 Hızlı Başlangıç
 
-### 1. Projeyi İndir
+
+## 📋 Gereksinimler## 📋 Gereksinimler
+
+
+
+- Docker- Docker
+
+- Docker Compose- Docker Compose
+
+
+
+## 🚀 Hızlı Başlangıç## 🚀 Hızlı Başlangıç
+
+
+
+### 1. Projeyi İndir### 1. Projeyi İndir
+
+```bash```bash
+
+git clone https://github.com/ucarabdullah/bilet-satin-alma.gitgit clone https://github.com/ucarabdullah/bilet-satin-alma.git
+
+cd bilet-satin-almacd bilet-satin-alma
+
+``````
+
+
+
+### 2. Docker Çalıştır### 2. Docker Çalıştır
+
+```bash```bash
+
+docker-compose up -ddocker-compose up -d
+
+``````
+
+
+
+### 3. Tarayıcıda Aç### 3. Tarayıcıda Aç
+
+``````
+
+http://localhost:8080http://localhost:8080
+
+``````
+
+
+
+## 🔑 Yönetici Girişleri## 🔑 Yönetici Girişleri
+
+
+
+Tüm hesapların şifresi: **password123**Tüm hesapların şifresi: **password123**
+
+
+
+### Admin Paneli### Admin Paneli
+
+**URL:** http://localhost:8080/admin/login**URL:** http://localhost:8080/admin/login
+
+
+
+| Email | Şifre | Açıklama || Email | Şifre | Açıklama |
+
+|-------|-------|----------||-------|-------|----------|
+
+| admin@bibilet.com | password123 | Sistem yöneticisi || admin@bibilet.com | password123 | Sistem yöneticisi |
+
+
+
+### Firma Paneli  ### Firma Paneli  
+
+**URL:** http://localhost:8080/company/login**URL:** http://localhost:8080/company/login
+
+
+
+| Firma | Email | Şifre || Firma | Email | Şifre |
+
+|-------|-------|-------||-------|-------|-------|
+
+| Metro Turizm | metro@bibilet.com | password123 || Metro Turizm | metro@bibilet.com | password123 |
+
+| Pamukkale Turizm | pamukkale@bibilet.com | password123 || Pamukkale Turizm | pamukkale@bibilet.com | password123 |
+
+| Ulusoy Seyahat | ulusoy@bibilet.com | password123 || Ulusoy Seyahat | ulusoy@bibilet.com | password123 |
+
+
+
+## ✨ Özellikler## ✨ Özellikler
+
+
+
+### Kullanıcı (Yolcu) Özellikleri### Kullanıcı (Yolcu) Özellikleri
+
+- ✅ Kullanıcı kayıt ve giriş sistemi- ✅ Kullanıcı kayıt ve giriş sistemi
+
+- ✅ Sefer arama ve filtreleme- ✅ Sefer arama ve filtreleme
+
+- ✅ Koltuk seçimi ve rezervasyon- ✅ Koltuk seçimi ve rezervasyon
+
+- ✅ Kupon kodu ile indirim uygulama- ✅ Kupon kodu ile indirim uygulama
+
+- ✅ Sanal bakiye ile bilet satın alma- ✅ Sanal bakiye ile bilet satın alma
+
+- ✅ Bilet iptal ve otomatik para iadesi- ✅ Bilet iptal ve otomatik para iadesi
+
+- ✅ PDF bilet indirme- ✅ PDF bilet indirme
+
+
+
+### Firma Admin Özellikleri### Firma Admin Özellikleri
+
+- ✅ Sefer yönetimi (CRUD)- ✅ Sefer yönetimi (CRUD)
+
+- ✅ Satılan biletleri görüntüleme- ✅ Satılan biletleri görüntüleme
+
+- ✅ Firmaya özel kupon oluşturma- ✅ Firmaya özel kupon oluşturma
+
+- ✅ Dashboard ve istatistikler- ✅ Dashboard ve istatistikler
+
+
+
+### Sistem Admin Özellikleri### Sistem Admin Özellikleri
+
+- ✅ Otobüs firması yönetimi- ✅ Otobüs firması yönetimi
+
+- ✅ Firma admin atama- ✅ Firma admin atama
+
+- ✅ Kupon yönetimi- ✅ Kupon yönetimi
+
+- ✅ Kullanıcı yönetimi- ✅ Kullanıcı yönetimi
+
+
+
+## 🔒 Güvenlik## 🔒 Güvenlik
+
+
+
+- ✅ CSRF Koruması- ✅ CSRF Koruması
+
+- ✅ XSS Koruması - ✅ XSS Koruması 
+
+- ✅ SQL Injection Koruması- ✅ SQL Injection Koruması
+
+- ✅ Session Güvenliği- ✅ Session Güvenliği
+
+- ✅ Brute Force Koruması- ✅ Brute Force Koruması
+
+- ✅ Password Hashing (Bcrypt)- ✅ Password Hashing (Bcrypt)
+
+
+
+## 🐳 Docker Komutları## � Hızlı Başlangıç (Önerilen)
+
+
+
+```bash### PHP Dahili Sunucu ile (En Kolay)
+
+# Container'ı başlat
+
+docker-compose up -d1. **Projeyi klonlayın:**
+
 ```bash
-git clone https://github.com/ucarabdullah/bilet-satin-alma.git
-cd bilet-satin-alma
+
+# Container'ı durdurgit clone https://github.com/ucarabdullah/bilet-satin-alma.git
+
+docker-compose downcd bilet-satin-alma
+
 ```
 
-### 2. Docker Çalıştır
+# Log'ları görüntüle
+
+docker-compose logs -f2. **Sunucuyu başlatın:**
+
 ```bash
-docker-compose up -d
-```
 
-### 3. Tarayıcıda Aç
-```
-http://localhost:8080
-```
+# Yeniden build etphp -S localhost:8000 -t public public/router.php
 
-### 4. Giriş Yap
-- **Admin**: admin@bibilet.com / password123
-- Diğer hesaplar: `TEST_ACCOUNTS.md`
+docker-compose build --no-cache```
 
-## ✨ Özellikler
-
-### Kullanıcı (Yolcu) Özellikleri
-- ✅ Kullanıcı kayıt ve giriş sistemi
-- ✅ Sefer arama ve filtreleme
-- ✅ Koltuk seçimi ve rezervasyon
-- ✅ Kupon kodu ile indirim uygulama
-- ✅ Sanal bakiye ile bilet satın alma
-- ✅ Bilet iptal ve otomatik para iadesi
-- ✅ PDF bilet indirme
-
-### Firma Admin Özellikleri
-- ✅ Sefer yönetimi (CRUD)
-- ✅ Satılan biletleri görüntüleme
-- ✅ Firmaya özel kupon oluşturma
-- ✅ Dashboard ve istatistikler
-
-### Sistem Admin Özellikleri
-- ✅ Otobüs firması yönetimi
-- ✅ Firma admin atama
-- ✅ Kupon yönetimi
-- ✅ Kullanıcı yönetimi
-
-## 🔒 Güvenlik
-
-- ✅ CSRF Koruması
-- ✅ XSS Koruması 
-- ✅ SQL Injection Koruması
-- ✅ Session Güvenliği
-- ✅ Brute Force Koruması
-- ✅ Password Hashing (Bcrypt)
-
-## � Hızlı Başlangıç (Önerilen)
-
-### PHP Dahili Sunucu ile (En Kolay)
-
-1. **Projeyi klonlayın:**
-```bash
-git clone https://github.com/ucarabdullah/bilet-satin-alma.git
-cd bilet-satin-alma
-```
-
-2. **Sunucuyu başlatın:**
-```bash
-php -S localhost:8000 -t public public/router.php
 ```
 
 3. **Tarayıcıda açın:**
-   - Ana Sayfa: `http://localhost:8000`
+
+## 📁 Proje Yapısı   - Ana Sayfa: `http://localhost:8000`
+
    - Admin Paneli: `http://localhost:8000/admin/login`
-   - Firma Paneli: `http://localhost:8000/company/login`
 
-4. **Test hesapları:**
-   - `TEST_ACCOUNTS.md` dosyasına bakın
-   - Tüm şifreler: `password123`
+```   - Firma Paneli: `http://localhost:8000/company/login`
 
-> **Not:** Veritabanı (`database.sqlite`) projeye dahildir ve test verileri yüklenmiş haldedir.
+BiBİlet/
 
----
+├── config/              # Yapılandırma4. **Test hesapları:**
 
-##  Docker ile Kurulum (Alternatif)
+├── database/              - `TEST_ACCOUNTS.md` dosyasına bakın
 
-> **Uyarı:** Docker kurulumu şu anda `.htaccess` routing sorunu yaşamaktadır. PHP dahili sunucu kullanmanız önerilir.
+│   ├── schema.sql      # DB şeması   - Tüm şifreler: `password123`
 
-1. **Projeyi klonlayın:**
-```bash
-git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+│   └── seed.sql        # Test verileri
+
+├── public/             > **Not:** Veritabanı (`database.sqlite`) projeye dahildir ve test verileri yüklenmiş haldedir.
+
+│   ├── .htaccess      
+
+│   └── assets/         # CSS, JS, uploads---
+
+├── src/
+
+│   ├── controllers/   ##  Docker ile Kurulum (Alternatif)
+
+│   ├── models/        
+
+│   ├── views/         > **Uyarı:** Docker kurulumu şu anda `.htaccess` routing sorunu yaşamaktadır. PHP dahili sunucu kullanmanız önerilir.
+
+│   └── helpers/        
+
+├── Dockerfile          1. **Projeyi klonlayın:**
+
+└── docker-compose.yml  ```bash
+
+```git clone https://github.com/ucarabdullah/bilet-satin-alma.git
+
 cd bilet-satin-alma
+
+## 📄 Lisans```
+
+
+
+MIT lisansı altında lisanslanmıştır.2. **Docker container'ı başlatın:**
+
+```bash
+
+## 📧 İletişimdocker-compose up -d
+
 ```
 
-2. **Docker container'ı başlatın:**
-```bash
-docker-compose up -d
-```
-   - İlk çalıştırmada image build edilecek (1-2 dakika sürebilir)
+[@ucarabdullah](https://github.com/ucarabdullah)   - İlk çalıştırmada image build edilecek (1-2 dakika sürebilir)
+
    - Veritabanı otomatik olarak oluşturulacak
    - Test verileri yüklenecek
 
