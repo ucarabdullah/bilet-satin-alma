@@ -4,7 +4,7 @@
 
 -- 1. Admin Hesabı
 INSERT INTO User (id, full_name, email, password, role, balance) VALUES
-('admin-uuid-001', 'Sistem Yöneticisi', 'admin@bibilet.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'admin', 0);
+('admin-uuid-001', 'Sistem Yöneticisi', 'admin@bibilet.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'admin', 0);
 
 -- 2. Otobüs Firmaları
 INSERT INTO Bus_Company (id, name, logo_path) VALUES
@@ -14,15 +14,15 @@ INSERT INTO Bus_Company (id, name, logo_path) VALUES
 
 -- 3. Firma Admin Kullanıcıları
 INSERT INTO User (id, full_name, email, password, role, company_id, balance) VALUES
-('user-uuid-001', 'Metro Admin', 'metro@bibilet.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'company', 'company-uuid-001', 0),
-('user-uuid-002', 'Pamukkale Admin', 'pamukkale@bibilet.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'company', 'company-uuid-002', 0),
-('user-uuid-003', 'Ulusoy Admin', 'ulusoy@bibilet.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'company', 'company-uuid-003', 0);
+('user-uuid-001', 'Metro Admin', 'metro@bibilet.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'company', 'company-uuid-001', 0),
+('user-uuid-002', 'Pamukkale Admin', 'pamukkale@bibilet.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'company', 'company-uuid-002', 0),
+('user-uuid-003', 'Ulusoy Admin', 'ulusoy@bibilet.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'company', 'company-uuid-003', 0);
 
 -- 4. Normal Kullanıcılar (Yolcular)
 INSERT INTO User (id, full_name, email, password, role, balance) VALUES
-('user-uuid-101', 'Ahmet Yılmaz', 'ahmet@example.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'user', 1000),
-('user-uuid-102', 'Ayşe Demir', 'ayse@example.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'user', 1500),
-('user-uuid-103', 'Mehmet Kaya', 'mehmet@example.com', '$2y$12$LQv3c1yqBWVHxkd0LHAkCOYz6TtxMQJqhN8/LewY5GyYyILuxm7EW', 'user', 2000);
+('user-uuid-101', 'Ahmet Yılmaz', 'ahmet@example.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'user', 1000),
+('user-uuid-102', 'Ayşe Demir', 'ayse@example.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'user', 1500),
+('user-uuid-103', 'Mehmet Kaya', 'mehmet@example.com', '$2y$12$b6PvP9jT2gHQa/r5vaBxJ.UdQmKnsb4N4dhg/XAvCQbHG1Y6qALpS', 'user', 2000);
 
 -- 5. Seferler (Metro Turizm)
 INSERT INTO Trips (id, company_id, departure_city, destination_city, departure_time, arrival_time, price, capacity) VALUES

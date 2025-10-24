@@ -124,7 +124,7 @@
                         <i class="bi bi-envelope me-2"></i>E-posta
                     </label>
                     <input type="email" class="form-control" id="email" name="email" 
-                           placeholder="admin@bibilet.com" required autofocus>
+                           placeholder="E-posta adresiniz" required autofocus>
                 </div>
                 
                 <div class="mb-4">
@@ -132,7 +132,7 @@
                         <i class="bi bi-lock me-2"></i>Şifre
                     </label>
                     <input type="password" class="form-control" id="password" name="password" 
-                           placeholder="••••••••" required>
+                           placeholder="Şifreniz" required>
                 </div>
                 
                 <button type="submit" class="btn btn-admin-login">
