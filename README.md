@@ -56,13 +56,28 @@ cd bilet-satin-alma
 ```bash
 docker-compose up -d
 ```
+   - İlk çalıştırmada image build edilecek (1-2 dakika sürebilir)
+   - Veritabanı otomatik olarak oluşturulacak
+   - Test verileri yüklenecek
 
 3. **Uygulamayı açın:**
-- Tarayıcınızda `http://localhost:8080` adresine gidin
+   - Tarayıcınızda `http://localhost:8080` adresine gidin
+   - Test hesapları için `TEST_ACCOUNTS.md` dosyasına bakın
 
-4. **Container'ı durdurmak için:**
+4. **Log'ları kontrol etmek için:**
+```bash
+docker-compose logs -f
+```
+
+5. **Container'ı durdurmak için:**
 ```bash
 docker-compose down
+```
+
+6. **Tamamen silmek için (veritabanı dahil):**
+```bash
+docker-compose down -v
+rm database.sqlite
 ```
 
 ## 💻 Manuel Kurulum

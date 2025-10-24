@@ -6,6 +6,7 @@ services:
       - "8080:80"
     volumes:
       - ./database:/var/www/html/database
+      - db-data:/var/www/html
       - ./logs:/var/www/html/logs
       - ./public/assets/uploads:/var/www/html/public/assets/uploads
     environment:
@@ -13,6 +14,9 @@ services:
     restart: unless-stopped
     networks:
       - bibilet-network
+
+volumes:
+  db-data:
 
 networks:
   bibilet-network:

@@ -35,8 +35,12 @@ RUN mkdir -p /var/www/html/public/assets/uploads && \
     chown -R www-data:www-data /var/www/html/public/assets/uploads && \
     chmod -R 775 /var/www/html/public/assets/uploads
 
+# Entrypoint script'ini kopyala
+COPY docker-entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+
 # Port 80'i aç
 EXPOSE 80
 
-# Apache'yi başlat
-CMD ["apache2-foreground"]
+# Entrypoint ile başlat
+ENTRYPOINT ["docker-entrypoint.sh"]
