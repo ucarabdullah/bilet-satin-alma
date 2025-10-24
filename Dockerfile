@@ -29,8 +29,9 @@ RUN if [ -f database/schema.sql ]; then \
     chown www-data:www-data /var/www/html/database.sqlite && \
     chmod 664 /var/www/html/database.sqlite
 
-# Public klasörünü DocumentRoot olarak ayarla
-RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
+# Public klasörünü DocumentRoot olarak ayarla ve .htaccess'i etkinleştir
+RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf && \
+    sed -i '/<Directory \/var\/www\/>/,/<\/Directory>/ s/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Database klasörü için yazma izinleri
 RUN mkdir -p /var/www/html/database && \
